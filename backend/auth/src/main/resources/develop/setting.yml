@@ -1,0 +1,28 @@
+spring:
+  config:
+    activate:
+      on-profile: "develop"
+fassker:
+  datasource:
+    hikari:
+      jdbc-url: "jdbc:mysql://${FS_DB_HOST:127.0.0.1}:${FS_DB_PORT:3306}/${FS_DB_NAME:auth}?zeroDateTimeBehavior=convertToNull"
+      username: "${FS_DB_USER:develop}"
+      password: "${FS_DB_PASS:1q2w3e4r!!}"
+      format-sql: true
+      connection-test-query: SELECT NOW()
+      minimum-idle: 2
+      maximum-pool-size: 8
+      pool-name: community-project-pool-develop
+      cachePrepStmts: true
+      prepStmtCacheSize: 250
+      prepStmtCacheSqlLimit: 2048
+      useServerPrepStmts: true
+      useLocalSessionState: true
+      rewriteBatchedStatements: true
+      cacheResultSetMetadata: true
+      cacheServerConfiguration: true
+      elideSetAutoCommits: true
+      maintainTimeStats: false
+      max-lifetime: 300000
+      maxLifetime: 300000
+      leakDetectionThreshold: 5000
