@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class YamlPropertySourceFactory implements PropertySourceFactory {
+
     @Override
     public PropertySource<?> createPropertySource(String name, EncodedResource resource) throws IOException {
         YamlPropertiesFactoryBean factory = new YamlPropertiesFactoryBean();
@@ -19,4 +20,5 @@ public class YamlPropertySourceFactory implements PropertySourceFactory {
 
         return new PropertiesPropertySource(resource.getResource().getFilename(), properties);
     }
+
 }
